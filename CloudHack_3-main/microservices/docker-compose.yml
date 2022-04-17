@@ -1,0 +1,78 @@
+version: '3.3'  # version of compose format
+
+services:
+  landing-service:
+    build: ./landing  # path is relative to docker-compose.yml location
+    hostname: landing-service
+    ports:
+      - 5050:5050  # host:container
+    networks:
+      sample:
+        aliases:
+          - landing-service
+  # Add more services below
+  add-service:
+    build: ./add_service  # path is relative to docker-compose.yml location
+    hostname: add-service
+    ports:
+      - 5051:5051  # host:container
+    networks:
+      sample:
+        aliases:
+          - add-service
+  sub-service:
+    build: ./sub_service  # path is relative to docker-compose.yml location
+    hostname: sub-service
+    ports:
+      - 5052:5052  # host:container
+    networks:
+      sample:
+        aliases:
+          - sub-service
+  mul-service:
+    build: ./mul_service  # path is relative to docker-compose.yml location
+    hostname: mul-service
+    ports:
+      - 5053:5053  # host:container
+    networks:
+      sample:
+        aliases:
+          - mul-service
+  div-service:
+    build: ./div_service  # path is relative to docker-compose.yml location
+    hostname: div-service
+    ports:
+      - 5054:5054  # host:container
+    networks:
+      sample:
+        aliases:
+          - div-service 
+  mod-service:
+    build: ./mod_service  # path is relative to docker-compose.yml location
+    hostname: mod-service
+    ports:
+      - 5055:5055  # host:container
+    networks:
+      sample:
+        aliases:
+          - mod-service 
+  exp-service:
+    build: ./exp_service  # path is relative to docker-compose.yml location
+    hostname: exp-service
+    ports:
+      - 5056:5056  # host:container
+    networks:
+      sample:
+        aliases:
+          - exp-service
+  eq-service:
+    build: ./eq_service  # path is relative to docker-compose.yml location
+    hostname: eq-service
+    ports:
+      - 5057:5057  # host:container
+    networks:
+      sample:
+        aliases:
+          - eq-service  
+networks:
+  sample:
